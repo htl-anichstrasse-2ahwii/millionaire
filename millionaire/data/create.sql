@@ -7,6 +7,8 @@ CREATE TABLE genre
 	label VARCHAR(256) NOT NULL
 );
 
+INSERT INTO genre(id, label) VALUES(1, "US_Default");
+
 CREATE TABLE question
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,

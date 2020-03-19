@@ -7,7 +7,7 @@ CREATE TABLE genre
 	label VARCHAR(256) NOT NULL
 );
 
-INSERT INTO genre(id, label) VALUES(1, "US_Default");
+INSERT INTO genre(label) VALUES("US_Default");
 
 CREATE TABLE question
 (

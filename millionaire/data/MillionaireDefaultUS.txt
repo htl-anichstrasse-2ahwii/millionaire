@@ -53,7 +53,7 @@
 1	"In Roman numerals, ""D"" is equal to what number?"	500	100	1000	50
 1	Who fought Darth Vader with a light saber in the original Star Wars movie?	Obi Wan Kenobi	General Tarkin	Luke Skywalker	Han Solo
 1	"Who's portrait is on the new U.S. ""Golden Dollar"" coin?"	Sacagawea	Susan B. Anthony	Dwight D. Eisenhower	Pocahantas
-1	Abraham Lincoln said:  Four score and __________ years ago today…	Seven	Five	Eleven	Eight
+1	Abraham Lincoln said:  Four score and __________ years ago today?	Seven	Five	Eleven	Eight
 1	"In Roman numerals, ""C"" is equal to what number?"	100	1000	"1,000,000"	10
 1	"In Roman numerals, ""XIV"" is equal to what number?"	14	16	55	19
 1	"In bowling, what is the term for knocking down all remaining pins with the second ball?"	Spare	Strike	Split	Ace
@@ -165,7 +165,7 @@
 2	Which of the following four hands would be the winning poker hand?	Full house	Three of a kind	Straight	Flush
 2	"Who is the head of the ""Office of Homeland Security""?"	Tom Ridge	Alan Greenspan	Gale Norton	Rod Paige
 2	"In the 1939 movie, ""The Wizard of Oz,"" who played Dorothy?"	Judy Garland	Rosemary Murphy	Lauren Hutton	Ingrid Bergman
-2	Zero degrees latitude is common known as the…	Equator	North Pole	South Pole	International dateline
+2	Zero degrees latitude is common known as theï¿½	Equator	North Pole	South Pole	International dateline
 3	"Besides Washington D.C., what other city served as the capital of the United States?"	Philadelphia	New York	Boston	Baltimore
 3	Approximately how many liters are in a U.S. liquid gallon?	3.79	3.1415	2.2	6.022
 3	The speed of light is approximately how fast?	"186,000 miles per sec"	"5,500 miles per sec"	"1,670 miles per sec"	"512,000 miles per sec"

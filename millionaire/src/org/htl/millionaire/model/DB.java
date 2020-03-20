@@ -17,7 +17,7 @@ public class DB {
 		PropertyReader rd = new PropertyReader("db.properties");
 		String user = rd.get("user");
 		String password = rd.get("password");
-		String driver = rd.get("driver");
+		//String driver = rd.get("driver");
 		String url = rd.get("url");
 		
 		//Class.forName(driver); //e.g. "com.mysql.jdbc.Driver"

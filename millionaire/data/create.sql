@@ -16,6 +16,7 @@ CREATE TABLE question
 	difficulty INT NOT NULL,
 	info  VARCHAR(2048) NULL,
 	genre INT NOT NULL,
+	int how_often DEFAULT 0,
 	FOREIGN KEY (genre) REFERENCES genre(id)
 );
 

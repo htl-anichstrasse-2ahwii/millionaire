@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import org.htl.millionaire.utils.PropertyReader;
 
@@ -60,6 +61,45 @@ public class DB {
 		stmt.close();
 	}
 	
+	
+	
+	public Question getQuestionByRandom(int genre, int difficulty) throws SQLException
+	{
+		String sql = "SELECT * FROM question WHERE genre = ? AND difficulty = ? ORDER BY RAND() LIMIT 1";
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setInt(1, genre);
+		stmt.setInt(2, difficulty);
+		ResultSet rs = stmt.executeQuery();
+		Question q = null;
+		if (rs.next())
+		{
+			int id = rs.getInt("id");
+			String text = rs.getString("text");
+			String info = rs.getString("info");
+			int howOften = rs.getInt("how_often");
+			ArrayList<Answer> answers = getAnwersByQuestionId(id);
+			q = new Question(id, text, difficulty, info, genre, howOften, answers);
+		}
+		return q;
+	}
+	
+	private ArrayList<Answer> getAnwersByQuestionId(int qId) throws SQLException {
+		ArrayList<Answer> answers = new ArrayList<Answer>();
+		String sql = "SELECT * FROM answer WHERE question_id = ?";
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setInt(1, qId);
+		ResultSet rs = stmt.executeQuery();
+		while (rs.next())
+		{
+			int id = rs.getInt("id");
+			String text = rs.getString("text");
+			boolean correct = rs.getBoolean("correct");
+			Answer a = new Answer(id, text, correct);
+			answers.add(a);
+		}
+		return answers;
+	}
+
 	public void close() throws SQLException
 	{
 		conn.close();

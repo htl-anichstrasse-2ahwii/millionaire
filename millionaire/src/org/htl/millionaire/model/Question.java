@@ -1,6 +1,7 @@
 package org.htl.millionaire.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Question {
 	private int id;
@@ -48,6 +49,16 @@ public class Question {
 
 	public ArrayList<Answer> getAnswers() {
 		return answers;
+	}
+	
+	public void shuffle()
+	{
+		Collections.shuffle(answers);
+	}
+	
+	public boolean isCorrectAnswer(int pos)
+	{
+		return answers.get(pos).isCorrect();
 	}
 	
 	@Override

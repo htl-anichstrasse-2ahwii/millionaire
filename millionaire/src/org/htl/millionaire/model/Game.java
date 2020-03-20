@@ -20,6 +20,8 @@ public class Game {
 
 	public Question getQuestionByRandom() throws SQLException
 	{
-		return db.getQuestionByRandom(genre, currentLevel);
+		Question q = db.getQuestionByRandom(genre, currentLevel);
+		q.shuffle();
+		return q;
 	}
 }

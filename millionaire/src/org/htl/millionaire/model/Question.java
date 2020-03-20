@@ -11,7 +11,7 @@ public class Question {
 	private int genre;
 	private int howOften;
 	private ArrayList<Answer> answers;
-	
+
 	public Question(int id, String text, int difficulty, String info, int genre, int howOften,
 			ArrayList<Answer> answers) {
 		this.id = id;
@@ -50,25 +50,27 @@ public class Question {
 	public ArrayList<Answer> getAnswers() {
 		return answers;
 	}
-	
-	public void shuffle()
-	{
+
+	public void shuffle() {
 		Collections.shuffle(answers);
 	}
-	
-	public boolean isCorrectAnswer(int pos)
-	{
+
+	public boolean isCorrectAnswer(int pos) {
 		return answers.get(pos).isCorrect();
 	}
-	
+
+	public void nextLevel() {
+		difficulty++;
+	}
+
 	@Override
 	public String toString() {
 		String s = String.format("%d . %s : \n", id, text);
 		int pos = 1;
-		for (Answer a : answers)
-		{
+		for (Answer a : answers) {
 			s += String.format("%d: %s\n", pos++, a);
 		}
 		return s;
 	}
+
 }

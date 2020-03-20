@@ -24,4 +24,9 @@ public class Game {
 		q.shuffle();
 		return q;
 	}
+	
+	public boolean isCorrect(Question q, int pos)
+	{
+		return q.isCorrectAnswer(pos);
+	}
 }

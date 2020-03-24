@@ -11,8 +11,15 @@ import java.util.ArrayList;
 
 import org.htl.millionaire.utils.PropertyReader;
 
+/**
+ * @author albert
+ * Implements all DB access methods
+ */
 public class DB {
 	Connection conn;
+	/**
+	 * Open connection. Connection properties are stored within <b>db.properties</b>
+	 */
 	public DB() throws IOException, ClassNotFoundException, SQLException {
 		PropertyReader rd = new PropertyReader("db.properties");
 		String user = rd.get("user");
@@ -25,6 +32,11 @@ public class DB {
 		
 	}
 	
+	/**
+	 * Use this method for connecting tables. When storing an auto-generated primary key,
+	 * use the return value of this method to fetch this id and store it as foreign key in another table
+	 * @return
+	 */
 	private int getLastInsertId() throws SQLException
 	{
 		String sql = "SELECT LAST_INSERT_ID()";
@@ -37,6 +49,9 @@ public class DB {
 		return id;
 	}
 	
+	/**
+	 * Write Question information given by the parameters to database
+	 */
 	public int addQuestion(String text, int difficulty, String info, int genre) throws SQLException
 	{
 		String sql = "INSERT INTO question (text, difficulty, info, genre) VALUES (?,?,?,?)";
@@ -50,6 +65,9 @@ public class DB {
 		return getLastInsertId();
 	}
 	
+	/**
+	 * Write Answer information given by the parameters to database
+	 */
 	public void addAnswer(String text, int questionId, boolean correct) throws SQLException
 	{
 		String sql = "INSERT INTO answer(question_id, text, correct) VALUES (?,?,?)";
@@ -61,8 +79,9 @@ public class DB {
 		stmt.close();
 	}
 	
-	
-	
+	/**
+	 * Fetch a question from database by random from a different genre with a certain difficulty
+	 */
 	public Question getQuestionByRandom(int genre, int difficulty) throws SQLException
 	{
 		String sql = "SELECT * FROM question WHERE genre = ? AND difficulty = ? ORDER BY RAND() LIMIT 1";
@@ -83,6 +102,9 @@ public class DB {
 		return q;
 	}
 	
+	/**
+	 * Get the corresponding anwers for a certain question
+	 */
 	private ArrayList<Answer> getAnwersByQuestionId(int qId) throws SQLException {
 		ArrayList<Answer> answers = new ArrayList<Answer>();
 		String sql = "SELECT * FROM answer WHERE question_id = ?";
@@ -100,6 +122,9 @@ public class DB {
 		return answers;
 	}
 
+	/**
+	 * Close database connection
+	 */
 	public void close() throws SQLException
 	{
 		conn.close();

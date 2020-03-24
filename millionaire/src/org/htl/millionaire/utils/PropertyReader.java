@@ -3,6 +3,10 @@ package org.htl.millionaire.utils;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * @author albert
+ * Helper class to read java property files from classpath
+ */
 public class PropertyReader {
 	private Properties p;
 

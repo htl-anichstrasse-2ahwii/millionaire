@@ -3,6 +3,10 @@ package org.htl.millionaire.model;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * @author albert
+ * Hold all question information together with the possible answers
+ */
 public class Question {
 	private int id;
 	private String text;
@@ -58,10 +62,7 @@ public class Question {
 	public boolean isCorrectAnswer(int pos) {
 		return answers.get(pos).isCorrect();
 	}
-
-	public void nextLevel() {
-		difficulty++;
-	}
+	
 
 	@Override
 	public String toString() {

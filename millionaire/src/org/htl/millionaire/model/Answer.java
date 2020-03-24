@@ -1,5 +1,9 @@
 package org.htl.millionaire.model;
 
+/**
+ * @author albert
+ * Holds answers for question objects
+ */
 public class Answer {
 	private int id;
 	private String text;

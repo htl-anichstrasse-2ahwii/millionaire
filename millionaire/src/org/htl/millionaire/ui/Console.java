@@ -7,6 +7,10 @@ import java.util.Scanner;
 import org.htl.millionaire.model.Game;
 import org.htl.millionaire.model.Question;
 
+/**
+ * @author albert
+ * All user interaction is done here. Just interact with class Game
+ */
 public class Console {
 	
 	
@@ -23,7 +27,7 @@ public class Console {
 			if (q.isCorrectAnswer(answer))
 			{
 				System.out.println("stimmt!");
-				q.nextLevel();
+				game.nextLevel();
 			} else
 			{
 				System.out.println("leider falsch!");
